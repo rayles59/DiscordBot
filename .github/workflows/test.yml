@@ -1,7 +1,5 @@
 name: GitHub Actions Demo
 on: [push]
-branches:
-  - main
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -17,4 +15,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: curl -XPOST https://discord.com/api/webhooks/914790065002147840/4BL76CRbX_WHHO4ZALZiDOCqYel1RNYJWRysHEWf400HDJUQFuypQnVfI9mzcBnjWo2T 
+      - run: |
+          curl -XPOST 'https://discord.com/api/webhooks/914790065002147840/4BL76CRbX_WHHO4ZALZiDOCqYel1RNYJWRysHEWf400HDJUQFuypQnVfI9mzcBnjWo2T' -H 'Content-Type: application/json' -d '{"content": "bonjour"}'
